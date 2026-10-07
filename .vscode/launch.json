@@ -1,0 +1,20 @@
+{
+  // F5 — запуск на устройстве, выбранном в статус-баре (macOS / iPhone / Chrome)
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "my_app (debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+      // свой бэк: "toolArgs": ["--dart-define=API_URL=http://localhost:3000"]
+    },
+    {
+      "name": "my_app (release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release"
+    }
+  ]
+}

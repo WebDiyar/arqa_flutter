@@ -1,0 +1,60 @@
+{
+  // ───── из ~/Desktop/study/.vscode/settings.json ─────
+
+  // .md по клику открываются в режиме чтения (рендер), а не как исходник.
+  // Открыть исходник: правый клик по файлу → Open With… → Text Editor
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
+
+  // двойной клик по тексту в превью НЕ перебрасывает в исходник
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  // и подсветка «где сейчас курсор в исходнике» тоже не нужна при чтении
+  "markdown.preview.markEditorSelection": false,
+
+  // читалка
+  "markdown.preview.fontSize": 15,
+  "markdown.preview.lineHeight": 1.7,
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.scrollPreviewWithEditor": true,
+
+  // якоря (§N) и ссылки между гайдами: клик ведёт в файл, битые подсвечиваются
+  "markdown.validate.enabled": true,
+  "markdown.validate.fileLinks.enabled": "warning",
+  "markdown.validate.fragmentLinks.enabled": "warning",
+
+  // при правке исходника — мягкий перенос вместо горизонтальной прокрутки
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": { "comments": "off", "strings": "off", "other": "off" }
+  },
+
+  // ───── Flutter / Dart ─────
+
+  // рекомендованные настройки Dart-Code
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+    // при сохранении: автофиксы линтера + сортировка импортов
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // при отладке не проваливаться в код SDK и пакетов
+  "dart.debugSdkLibraries": false,
+  "dart.debugExternalPackageLibraries": false,
+
+  // сборочный мусор не лезет в поиск
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/ios/Pods": true,
+    "**/macos/Pods": true
+  }
+}

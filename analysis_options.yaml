@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+
+linter:
+  rules:
+    # Пути вида package:my_app/features/... — сразу видно, какой слой импортируется.
+    always_use_package_imports: true
+    prefer_single_quotes: true
+    prefer_final_locals: true
+    directives_ordering: true
+    unawaited_futures: true
