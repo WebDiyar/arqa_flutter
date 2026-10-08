@@ -1,0 +1,15 @@
+.git
+.github
+.dart_tool
+.idea
+.vscode
+build
+docs
+android
+ios
+macos
+**/Pods
+server/.dart_tool
+server/data/trips.json
+server/data/trips.json.tmp
+*.iml

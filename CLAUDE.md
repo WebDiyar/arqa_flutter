@@ -1,16 +1,19 @@
 # Правила для AI-агентов в этом проекте
 
-Flutter, Feature-first + Clean Architecture. Полные правила: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Прочитай его перед тем, как добавлять фичу или менять слои.
+Дневник смен водителя: Flutter-клиент (`lib/`) + Dart-сервер (`server/`). Задание: [docs/TASK.md](docs/TASK.md). Архитектура: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Прочитай её перед тем, как менять слои.
 
 Жёсткие правила:
 
-1. Новая фича кладётся в `lib/features/<name>/{domain,data,presentation}` + `di.dart`, по чек-листу из ARCHITECTURE.md §11. Образец — `features/posts`.
-2. `domain/` не импортирует Flutter, dio, Riverpod и `data/`.
+1. Клиент: Feature-first + Clean. Новая фича кладётся в `lib/features/<name>/{domain,data,presentation}` + `di.dart`, по чек-листу из ARCHITECTURE.md §11. Образец — `features/trips`.
+2. `domain/` не импортирует Flutter-виджеты, dio, Riverpod и `data/`.
 3. `presentation/` не импортирует `data/`. Зависимости берутся только через провайдеры из `di.dart`.
-4. Фича не импортирует другую фичу. Общее поднимается в `lib/core/`.
-5. Из data-слоя наружу выходит только `AppException`, `DioException` ловится в `*_repository_impl.dart`.
-6. Провайдер репозитория объявляется с типом контракта: `Provider<XRepository>`.
-7. Импорты пишутся только как `package:my_app/...`.
-8. Перед тем как сказать «готово», прогнать `flutter analyze && flutter test`.
+4. Из data-слоя наружу выходит только `AppException`.
+5. Время поездок хранится только как `ZonedDateTime` / ISO-строка со смещением. Никакого `DateTime.parse` для отображения или для определения дня.
+6. Сводку считает сервер, клиент её не пересчитывает (неотправленные поездки показываются отдельно и в итоги не входят).
+7. Повторная отправка всегда идёт с тем же `Trip.id`: это ключ идемпотентности.
+8. Деньги — `int`.
+9. Цвета и шрифты берутся только из `core/theme/app_theme.dart`, никаких хардкод-цветов в виджетах.
+10. Импорты пишутся только как `package:...`.
+11. Перед тем как сказать «готово»: `flutter analyze && flutter test` и `cd server && dart analyze && dart test`.
 
 Документация и комментарии пишутся на русском, код на английском.

@@ -3,18 +3,29 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "my_app (debug)",
+      "name": "server",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "server",
+      "program": "bin/server.dart"
+    },
+    {
+      "name": "client (debug)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart"
-      // свой бэк: "toolArgs": ["--dart-define=API_URL=http://localhost:3000"]
+      // свой бэк: "toolArgs": ["--dart-define=API_URL=http://192.168.1.10:8080"]
     },
     {
-      "name": "my_app (release)",
+      "name": "client (release)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
       "flutterMode": "release"
     }
+  ],
+  // F5 → «server + client»: поднять оба разом
+  "compounds": [
+    { "name": "server + client", "configurations": ["server", "client (debug)"] }
   ]
 }

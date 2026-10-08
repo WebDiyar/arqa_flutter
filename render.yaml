@@ -1,0 +1,7 @@
+# Render Blueprint: New → Blueprint → выбрать репозиторий.
+services:
+  - type: web
+    name: driver-diary
+    runtime: docker
+    plan: free
+    healthCheckPath: /health

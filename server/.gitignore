@@ -1,0 +1,4 @@
+.dart_tool/
+# рабочая копия данных создаётся из seed.json при первом запуске
+data/trips.json
+data/trips.json.tmp
