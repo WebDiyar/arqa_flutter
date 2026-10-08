@@ -64,3 +64,12 @@ app.*.map.json
 .playwright-mcp/
 playwright-report/
 test-results/
+
+# Личные черновики (анкета и т.п.)
+*.local.md
+*.local.txt
+
+# Резюме (pdf + tex) лежит в репозитории; ответы анкеты и их PDF/txt остаются локальными
+/cv/*
+!/cv/Diyar_Amangeldi_Fullstack_Engineer_2026-10.pdf
+!/cv/Diyar_Amangeldi_Fullstack_Engineer_2026-10.tex

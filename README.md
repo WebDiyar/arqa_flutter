@@ -8,6 +8,7 @@
 | **Репозиторий** | https://github.com/WebDiyar/arqa_flutter |
 | **Задание** | [docs/TASK.md](docs/TASK.md) (источник: [jobs.arqa.cc](https://jobs.arqa.cc/#task)) |
 | **Ответ для анкеты** | [docs/SUBMISSION.md](docs/SUBMISSION.md) |
+| **Резюме** | [cv/Diyar_Amangeldi_Fullstack_Engineer_2026-10.pdf](cv/Diyar_Amangeldi_Fullstack_Engineer_2026-10.pdf) |
 
 > Демо работает на бесплатном хостинге, который усыпляет сервер после 15 минут без запросов. Первое открытие может занять до минуты, приложение об этом предупредит. Поездки, добавленные в демо, сбрасываются при перезапуске сервера, а данные из примера (1–3 октября 2026) остаются.
 
